@@ -9,7 +9,7 @@ import numpy as np
 from osgeo import gdal, gdal_array
 
 
-def to_array(input_file, dim_ordering = 'channels_last', dtype = 'float32'):
+def tiff_to_array(input_file, dim_ordering = 'channels_last', dtype = 'float32'):
      ''' Converts image to array.
      input_file: (str) path to image file.
      '''
@@ -21,7 +21,7 @@ def to_array(input_file, dim_ordering = 'channels_last', dtype = 'float32'):
      return arr
 
 
-def to_tiff(array, src_raster, dst_filename):
+def array_to_tiff(array, src_raster, dst_filename):
      '''Converts n-dimensional array to raster in tif format.
      For a single band 3-D array (i.e. len(array.shape)=3), reshape such that len(array.shape) = 2.
      array: (numpy array) n-dimensional array to be converted.
