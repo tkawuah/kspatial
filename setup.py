@@ -22,8 +22,8 @@ with open('requirements.txt') as foo:
 
 setup(
     name=kspatial,
-    version='0.0.1'
-    url='',
+    version='0.0.1',
+    url='https://github.com/tkawuah/kspatial',
     description='A collection of functions for processing geospatial raster and vector data',
     long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
     author=__author__,

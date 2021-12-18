@@ -1,6 +1,1 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Dec 17 15:12:35 2021
-
-@author: Awuah
-"""
+This package contains collection of functions for processing geospatial raster and vector data.
