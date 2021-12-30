@@ -109,3 +109,14 @@ def split_raster(input_file, x, y, output_folder):
                          projWin = (xmin, ymax, xmax, ymin))
      inRaster = None
 
+
+def resample(refDs, inDs, dst_filename, resample_Alg = gdal.GRA_NearestNeighbour):
+     in_ds = gdal.Open(inDs)
+     ref_ds = gdal.Open(refDs)
+     ref_width = ref_ds.RasterXSize
+     ref_height = ref_ds.RasterYSize
+     warp_options = gdal.WarpOptions(format='GTiff', width=ref_width, height=ref_height, resampleAlg=resample_Alg)
+     out_ds = gdal.Warp(dst_filename, in_ds, options= warp_options)
+     in_ds = None
+     ref_ds = None
+     return out_ds
